@@ -6,16 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jlfilho.cursomc.domain.Categoria;
-import com.jlfilho.cursomc.repositories.CategoriaRepository;
+import com.jlfilho.cursomc.domain.Produto;
+import com.jlfilho.cursomc.repositories.ProdutoRepository;
 
 @Service
-public class CategoriaService {
-
+public class ProdutoService {
+	
 	@Autowired
-	private CategoriaRepository repo;
-
-	public Categoria buscar(Integer id) {
-		Optional<Categoria> obj = repo.findById(id);
+	private ProdutoRepository produtoRepository;
+	
+	public Produto buscar(Integer id) {
+		Optional<Produto> obj = produtoRepository.findById(id);
 		return obj.orElse(null);
 	}
 
